@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ip search</title>
+    <link rel="stylesheet" href="searchip.new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>ip search</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">homepage</a></li>
+                    <li><a href="#faq">faq</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home">
+        <section class="container start-screen" id="start-screen">
+            <div class="intro-box">
+                <h2>IP Location Finder</h2>
+                <p>Discover detailed information about an ip address, enter the ip below to get started</p>
+                <div class="search-bar">
+                    <input type="text" id="ip-address" placeholder="enter ip..." />
+                    <button onclick="fetchIPInfo()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <p id="error-message" class="error-message"></p>
+            </div>
+        </section>
+
+        <section class="container ip-details-screen" id="ip-details-screen" style="display: none;">
+            <h2>IP address lookup:</h2>
+            <div class="ip-info-container">
+                <div class="info-box">
+                    <p><strong>IP Address:</strong> <span id="ip-value"></span></p>
+                    <p><strong>Decimal:</strong> <span id="ip-decimal"></span></p>
+                    <p><strong>Hostname:</strong> <span id="ip-hostname"></span></p>
+                    <p><strong>ASN:</strong> <span id="ip-asn"></span></p>
+                    <p><strong>ISP:</strong> <span id="ip-isp"></span></p>
+                    <p><strong>Services:</strong> <span id="ip-services"></span></p>
+                    <p><strong>Country:</strong> <span id="ip-country"></span></p>
+                    <p><strong>State/Region:</strong> <span id="ip-region"></span></p>
+                    <p><strong>City:</strong> <span id="ip-city"></span></p>
+                    <p><strong>Latitude:</strong> <span id="ip-latitude"></span></p>
+                    <p><strong>Longitude:</strong> <span id="ip-longitude"></span></p>
+                </div>
+                <div class="map-box">
+                    <div id="map"></div>
+                </div>
+            </div>
+            <button class="back-button" onclick="goBack()">homepage</button>
+        </section>
+
+        <section id="faq" class="container faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is IP Lookup?</h3>
+                <p>Looking up an IP address can provide a lot of information about the device and network associated with that IP address. Here’s what you can find out by looking up someone’s IP.</p>
+            </div>
+            <div class="faq-item">
+                <h3>IP geolocation</h3>
+                <p>Looking up an IP address shows you the geolocation of that IP address, including the country, state, city, and zip code.</p>
+            </div>
+            <div class="faq-item">
+                <h3>IP owner’s name</h3>
+                <p>An IP address does not reveal the user’s name or identity. However, it can be used to find out their name (e.g., in legal investigations).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© website build by alqsdeuss</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="searchip.new.js"></script>
+</body>
+</html>            
